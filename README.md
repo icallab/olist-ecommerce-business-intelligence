@@ -97,12 +97,10 @@ The project follows a Star Schema design.
 
 ### Star Schema
 
-```text
 
  ![star schema](dashboard/screenshots/starschema.png)                     
-                      
-                
-```
+                                 
+
 
 ---
 
