@@ -98,15 +98,8 @@ The project follows a Star Schema design.
 ### Star Schema
 
 ```text
-                  Dim Customer         Dim Product
-                      |                    |
-                      |                    |
-Fact Review ---- Fact Orders  ---- Fact Order Item ---Dim Seller
-                     |  | 
-                     |  |-------- Dim date
-                     |           
-               Fact Payment     
-                      
+
+ ![star schema](dashboard/screenshots/starschema.png)                     
                       
                 
 ```
@@ -163,7 +156,7 @@ Provide an executive-level business summary.
 
 ### Dashboard Preview
 
-![Executive Overview](dashboard/screenshots/salesproduct.png)
+![Sales and Product Analysis Dashboard](dashboard/screenshots/salesproduct.png)
 
 ### Focus Area
 
@@ -182,7 +175,7 @@ Product and sales performance.
 
 ### Dashboard Preview
 
-![Executive Overview](dashboard/screenshots/customer.png)
+![Customer Analytics Dashboard](dashboard/screenshots/customer.png)
 
 ### Focus Area
 
@@ -205,7 +198,7 @@ Customer retention is the largest growth opportunity.
 
 ### Dashboard Preview
 
-![Executive Overview](dashboard/screenshots/delivery.png)
+![Operations and Delivery Dashboard](dashboard/screenshots/delivery.png)
 
 ### Focus Area
 
@@ -232,7 +225,7 @@ Delivery performance has a direct impact on customer satisfaction.
 
 ### Dashboard Preview
 
-![Executive Overview](dashboard/screenshots/payment.png)
+![Payment Analysis Dashboard](dashboard/screenshots/payment.png)
 
 ### Focus Area
 
