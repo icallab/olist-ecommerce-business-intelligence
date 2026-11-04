@@ -1,14 +1,5 @@
 # 📊 Olist E-Commerce Business Intelligence Analysis
 
-## End-to-End BI Project Using Power BI, SQL, Python, and Business Analytics
-
-https://img.shields.io/badge/Power%20BI-Dashboard-yellow
-https://img.shields.io/badge/Python-Data%20Analysis-blue
-https://img.shields.io/badge/PostgreSQL-Database-green
-https://img.shields.io/badge/BI-Business%20Analysis-orange
-
----
-
 # 📌 Project Overview
 
 This project analyzes the business performance of Olist, one of Brazil's largest e-commerce marketplaces.
@@ -95,29 +86,29 @@ The project follows a Star Schema design.
 - Fact Orders
 - Fact Payments
 - Fact Reviews
+- Fact Order Item
 
 ## Dimension Tables
 
 - Dim Customers
 - Dim Sellers
 - Dim Products
-- Dim Category
 - Dim Date
-- Dim Geography
 
 ### Star Schema
 
 ```text
-                  Dim Date
-                      |
-                      |
-Dim Customer ---- Fact Orders ---- Dim Product
-                      |
-                      |
-                 Dim Seller
-                      |
-                      |
-                Dim Geography
+                  Dim Customer         Dim Product
+                      |                    |
+                      |                    |
+Fact Review ---- Fact Orders  ---- Fact Order Item ---Dim Seller
+                     |  | 
+                     |  |-------- Dim date
+                     |           
+               Fact Payment     
+                      
+                      
+                
 ```
 
 ---
@@ -144,6 +135,10 @@ The Power BI solution consists of five business-focused dashboards.
 
 ## 1️⃣ Executive Overview
 
+### Dashboard Preview
+
+![Executive Overview](dashboard/screenshots/dashboard.png)
+
 ### Purpose
 
 Provide an executive-level business summary.
@@ -166,6 +161,10 @@ Provide an executive-level business summary.
 
 ## 2️⃣ Sales & Product Analysis
 
+### Dashboard Preview
+
+![Executive Overview](dashboard/screenshots/salesproduct.png)
+
 ### Focus Area
 
 Product and sales performance.
@@ -180,6 +179,10 @@ Product and sales performance.
 ---
 
 ## 3️⃣ Customer Analytics
+
+### Dashboard Preview
+
+![Executive Overview](dashboard/screenshots/customer.png)
 
 ### Focus Area
 
@@ -199,6 +202,10 @@ Customer retention is the largest growth opportunity.
 ---
 
 ## 4️⃣ Operations & Delivery
+
+### Dashboard Preview
+
+![Executive Overview](dashboard/screenshots/delivery.png)
 
 ### Focus Area
 
@@ -222,6 +229,10 @@ Delivery performance has a direct impact on customer satisfaction.
 ---
 
 ## 5️⃣ Payment Analysis
+
+### Dashboard Preview
+
+![Executive Overview](dashboard/screenshots/payment.png)
 
 ### Focus Area
 
@@ -328,33 +339,65 @@ of customers make additional purchases.
 
 ```text
 ├── README.md
-│
-├── docs
-│   ├── EXECUTIVE_SUMMARY.md
-│   ├── BUSINESS_INSIGHTS.md
-│   └── BUSINESS_RECOMMENDATIONS.md
-│
 ├── dashboard
-│   ├── Executive Overview.png
-│   ├── Sales & Product Analysis.png
-│   ├── Customer Analytics.png
-│   ├── Operations & Delivery.png
-│   └── Payment Analysis.png
+│   ├── screenshots
+│          ├── Executive Overview.png
+│          ├── Sales & Product Analysis.png
+│          ├── Customer Analytics.png
+│          ├── Operations & Delivery.png
+│          └── Payment Analysis.png
+│   ├── olist_bii.pbix
+|
+├── data
+│   ├── analytics
+│          ├── category_sales.csv
+│          ├── customer_metrics.csv
+│          ├── customer_rfm.csv
+│          ├── customer_segments.csv
+│          ├── delivery_review_analysis.csv
+│          ├── monthly_sales.csv
+│          └── state_analysis.csv
+|
+│   ├── processed
+│          ├── dim_customer.csv
+│          ├── dim_date.csv
+│          ├── dim_product.csv
+│          ├── dim_seller.csv
+│          ├── fact_delivery.csv
+│          ├── fact_order.csv
+│          ├── fact_order_item.csv
+│          ├── fact_sales.csv
+│          └── monthly_sales.csv
+|
+|   ├── raw
+│          ├── olist_customers_dataset.csv
+│          ├── olist_geolocation_dataset.csv
+│          ├── olist_order_items_dataset.csv
+│          ├── olist_order_payments_dataset.csv
+│          ├── olist_order_reviews_dataset.csv
+│          ├── olist_orders_dataset.csv
+│          ├── olist_products_dataset.csv
+│          ├── olist_sellers_dataset.csv
+│          └── product_category_name_translation.csv
+|
+├── docs
+│   ├── executive_summary.md
+│   ├── business_insight.md
+│   └── business_recommendations.md
+│
 │
 ├── notebooks
-│   ├── 01_EDA.ipynb
-│   ├── 02_Data_Cleaning.ipynb
-│   ├── 03_Feature_Engineering.ipynb
-│   ├── 04_Data_Modeling.ipynb
-│   └── 05_Business_Analysis.ipynb
+│   ├── 01_data_understanding.ipynb
+│   ├── 02_data_quality.ipynb
+│   ├── 03_eda_business_analysis.ipynb
 │
 ├── sql
-│   ├── schema.sql
-│   ├── etl_queries.sql
-│   └── business_queries.sql
-│
-└── powerbi
-    └── Olist_Ecommerce_Dashboard.pbix
+│   ├── 01_create_tables.sql
+│   ├── 02_data_quality_checks.sql
+│   ├── 03_sales_product_analysis.sql
+|   ├── 04_customer_analysis.sql
+|   ├── 05_operations_delivery.sql
+|   └── 06_payment_review_analysis.sql
 ```
 
 ---
