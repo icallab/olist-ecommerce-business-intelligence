@@ -391,21 +391,3 @@ of customers make additional purchases.
 |   └── 06_payment_review_analysis.sql
 ```
 
----
-
-# 💡 Key Portfolio Takeaway
-
-This project demonstrates the complete end-to-end workflow of a Business Intelligence Analyst, covering data preparation, dimensional modeling, SQL analysis, dashboard development, business insight generation, and strategic recommendations.
-
-The analysis identified that Olist's greatest growth opportunity is not acquiring more customers, but improving customer retention, logistics efficiency, and operational profitability.
-
----
-
-# 👤 Author
-
-**Nur**
-
-Business Intelligence Analyst Portfolio Project
-
-Tools:
-Power BI | SQL | PostgreSQL | Python | Business Analytics
